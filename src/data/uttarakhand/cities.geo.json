@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"dehradun","name":"Dehradun","districtId":"uttarakhand_dehradun","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[78.03,30.33]}},
+    {"type":"Feature","properties":{"id":"mussoorie","name":"Mussoorie","districtId":"uttarakhand_dehradun","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[78.070,30.455]}},
+    {"type":"Feature","properties":{"id":"roorkee","name":"Roorkee","districtId":"uttarakhand_haridwar","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[77.891,29.869]}},
+    {"type":"Feature","properties":{"id":"rishikesh","name":"Rishikesh","districtId":"uttarakhand_dehradun","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[78.281,30.086]}},
+    {"type":"Feature","properties":{"id":"haridwar","name":"Haridwar","districtId":"uttarakhand_haridwar","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[78.164,29.945]}},
+    {"type":"Feature","properties":{"id":"corbett","name":"Corbett (Ramganga)","districtId":"uttarakhand_nainital","type":"poi","importance":2},"geometry":{"type":"Point","coordinates":[79.12,29.53]}},
+    {"type":"Feature","properties":{"id":"devprayag","name":"Devprayag","districtId":"uttarakhand_tehri_garhwal","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[78.6,30.15]}},
+    {"type":"Feature","properties":{"id":"rudraprayag","name":"Rudraprayag","districtId":"uttarakhand_rudraprayag","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[79.019,30.283]}},
+    {"type":"Feature","properties":{"id":"karnprayag","name":"Karnprayag","districtId":"uttarakhand_chamoli","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[79.25,30.26]}},
+    {"type":"Feature","properties":{"id":"nanda_devi","name":"Nanda Devi","districtId":"uttarakhand_chamoli","type":"poi","importance":2},"geometry":{"type":"Point","coordinates":[79.7,30.375]}},
+    {"type":"Feature","properties":{"id":"badrinath","name":"Badrinath","districtId":"uttarakhand_chamoli","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[79.49,30.74]}},
+    {"type":"Feature","properties":{"id":"kedarnath","name":"Kedarnath","districtId":"uttarakhand_rudraprayag","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[79.07,30.735]}},
+    {"type":"Feature","properties":{"id":"gangotri","name":"Gangotri","districtId":"uttarakhand_uttarkashi","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[78.94,30.99]}},
+    {"type":"Feature","properties":{"id":"yamunotri","name":"Yamunotri","districtId":"uttarakhand_uttarkashi","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[78.45,31.01]}},
+    {"type":"Feature","properties":{"id":"uttarkashi","name":"Uttarkashi","districtId":"uttarakhand_uttarkashi","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[78.443,30.728]}},
+    {"type":"Feature","properties":{"id":"bageshwar","name":"Bageshwar","districtId":"uttarakhand_bageshwar","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[79.772,29.837]}},
+    {"type":"Feature","properties":{"id":"almora","name":"Almora","districtId":"uttarakhand_almora","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[79.65,29.62]}},
+    {"type":"Feature","properties":{"id":"haldwani","name":"Haldwani","districtId":"uttarakhand_nainital","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[79.52,29.22]}},
+    {"type":"Feature","properties":{"id":"nainital","name":"Nainital","districtId":"uttarakhand_nainital","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[79.46,29.39]}}
+  ]
+}

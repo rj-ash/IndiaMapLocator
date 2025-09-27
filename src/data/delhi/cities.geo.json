@@ -1,0 +1,16 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+  {"type":"Feature","properties":{"id":"new_delhi","name":"New Delhi","districtId":"dl_new_delhi","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[77.2090,28.6135]}},
+  {"type":"Feature","properties":{"id":"connaught_place","name":"Connaught Place","districtId":"dl_new_delhi","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[77.2190,28.6312]}},
+  {"type":"Feature","properties":{"id":"chandni_chowk","name":"Chandni Chowk","districtId":"dl_central","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[77.2273,28.6560]}},
+  {"type":"Feature","properties":{"id":"karol_bagh","name":"Karol Bagh","districtId":"dl_central","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[77.1910,28.6510]}},
+  {"type":"Feature","properties":{"id":"dwarka","name":"Dwarka","districtId":"dl_south_west","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[77.0390,28.5892]}},
+  {"type":"Feature","properties":{"id":"rohini","name":"Rohini","districtId":"dl_north_west","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[77.1105,28.7360]}},
+  {"type":"Feature","properties":{"id":"saket","name":"Saket","districtId":"dl_south","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[77.2195,28.5242]}},
+  {"type":"Feature","properties":{"id":"noida","name":"Noida (UP)","districtId":"up_gautam_budh_nagar","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[77.3910,28.5350]}},
+  {"type":"Feature","properties":{"id":"gurugram","name":"Gurugram (HR)","districtId":"hr_gurugram","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[77.0300,28.4593]}},
+  {"type":"Feature","properties":{"id":"ghaziabad","name":"Ghaziabad (UP)","districtId":"up_ghaziabad","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[77.4530,28.6690]}},
+  {"type":"Feature","properties":{"id":"faridabad","name":"Faridabad (HR)","districtId":"hr_faridabad","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[77.3170,28.4085]}}
+  ]
+}

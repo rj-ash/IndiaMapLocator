@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"dl_new_delhi","name":"New Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.17,28.63],[77.25,28.63],[77.25,28.56],[77.17,28.56],[77.17,28.63]]]}},
+    {"type":"Feature","properties":{"id":"dl_central","name":"Central Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.17,28.66],[77.24,28.66],[77.24,28.60],[77.17,28.60],[77.17,28.66]]]}},
+    {"type":"Feature","properties":{"id":"dl_south","name":"South Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.15,28.57],[77.27,28.57],[77.27,28.49],[77.15,28.49],[77.15,28.57]]]}},
+    {"type":"Feature","properties":{"id":"dl_south_west","name":"South West Delhi"},"geometry":{"type":"Polygon","coordinates":[[[76.99,28.63],[77.12,28.63],[77.12,28.52],[76.99,28.52],[76.99,28.63]]]}},
+    {"type":"Feature","properties":{"id":"dl_north_west","name":"North West Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.05,28.77],[77.19,28.77],[77.19,28.67],[77.05,28.67],[77.05,28.77]]]}},
+    {"type":"Feature","properties":{"id":"dl_east","name":"East Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.28,28.69],[77.38,28.69],[77.38,28.61],[77.28,28.61],[77.28,28.69]]]}},
+    {"type":"Feature","properties":{"id":"dl_shahdara","name":"Shahdara"},"geometry":{"type":"Polygon","coordinates":[[[77.30,28.71],[77.40,28.71],[77.40,28.64],[77.30,28.64],[77.30,28.71]]]}},
+    {"type":"Feature","properties":{"id":"dl_north","name":"North Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.16,28.75],[77.28,28.75],[77.28,28.67],[77.16,28.67],[77.16,28.75]]]}},
+    {"type":"Feature","properties":{"id":"dl_west","name":"West Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.00,28.70],[77.12,28.70],[77.12,28.60],[77.00,28.60],[77.00,28.70]]]}},
+    {"type":"Feature","properties":{"id":"dl_north_east","name":"North East Delhi"},"geometry":{"type":"Polygon","coordinates":[[[77.28,28.74],[77.38,28.74],[77.38,28.69],[77.28,28.69],[77.28,28.74]]]}}
+  ]
+}

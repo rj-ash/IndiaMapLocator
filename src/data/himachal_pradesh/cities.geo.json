@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"shimla","name":"Shimla","districtId":"hp_shimla","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[77.1734,31.1048]}},
+    {"type":"Feature","properties":{"id":"dharamshala","name":"Dharamshala","districtId":"hp_kangra","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[76.3234,32.2190]}},
+    {"type":"Feature","properties":{"id":"kangra","name":"Kangra","districtId":"hp_kangra","type":"town","importance":3},"geometry":{"type":"Point","coordinates":[76.2711,32.0998]}},
+    {"type":"Feature","properties":{"id":"manali","name":"Manali","districtId":"hp_kullu","type":"town","importance":4},"geometry":{"type":"Point","coordinates":[77.1887,32.2432]}},
+    {"type":"Feature","properties":{"id":"kullu","name":"Kullu","districtId":"hp_kullu","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[77.1103,31.9579]}},
+    {"type":"Feature","properties":{"id":"mandi","name":"Mandi","districtId":"hp_mandi","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[76.9339,31.7119]}},
+    {"type":"Feature","properties":{"id":"solan","name":"Solan","districtId":"hp_solan","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[77.0980,30.9080]}},
+    {"type":"Feature","properties":{"id":"bilaspur","name":"Bilaspur","districtId":"hp_bilaspur","type":"district_hq","importance":2},"geometry":{"type":"Point","coordinates":[76.7567,31.3381]}},
+    {"type":"Feature","properties":{"id":"chamba","name":"Chamba","districtId":"hp_chamba","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[76.1349,32.5530]}},
+    {"type":"Feature","properties":{"id":"una","name":"Una","districtId":"hp_una","type":"district_hq","importance":2},"geometry":{"type":"Point","coordinates":[76.2717,31.4685]}},
+    {"type":"Feature","properties":{"id":"hamirpur","name":"Hamirpur","districtId":"hp_hamirpur","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[76.5231,31.6849]}},
+    {"type":"Feature","properties":{"id":"kalpa","name":"Kalpa","districtId":"hp_kinnaur","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[78.2586,31.5381]}},
+    {"type":"Feature","properties":{"id":"rekong_peo","name":"Rekong Peo","districtId":"hp_kinnaur","type":"district_hq","importance":2},"geometry":{"type":"Point","coordinates":[78.2751,31.5372]}},
+    {"type":"Feature","properties":{"id":"keylong","name":"Keylong","districtId":"hp_lahul_spiti","type":"district_hq","importance":2},"geometry":{"type":"Point","coordinates":[77.0266,32.5714]}},
+    {"type":"Feature","properties":{"id":"kaza","name":"Kaza","districtId":"hp_lahul_spiti","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[78.0617,32.2266]}},
+    {"type":"Feature","properties":{"id":"palampur","name":"Palampur","districtId":"hp_kangra","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[76.5436,32.1109]}},
+    {"type":"Feature","properties":{"id":"nahan","name":"Nahan","districtId":"hp_sirmaur","type":"district_hq","importance":2},"geometry":{"type":"Point","coordinates":[77.2961,30.5595]}},
+    {"type":"Feature","properties":{"id":"paonta_sahib","name":"Paonta Sahib","districtId":"hp_sirmaur","type":"town","importance":2},"geometry":{"type":"Point","coordinates":[77.6244,30.4367]}}
+  ]
+}
