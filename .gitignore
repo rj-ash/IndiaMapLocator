@@ -1,0 +1,32 @@
+# Node / tooling
+node_modules/
+dist/
+.tmp/
+temp/
+.npmrc
+
+# Logs & reports
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+coverage/
+.vitest/
+
+# Editor / system
+.DS_Store
+.idea/
+*.swp
+
+# Build artifacts
+*.local
+.eslintcache
+
+# Env files (add if you introduce secrets or keys later)
+.env
+.env.*
+!.env.example
+
+# Optional: keep VS Code workspace settings if you want to share – remove next line if you DO want them
+.vscode/
