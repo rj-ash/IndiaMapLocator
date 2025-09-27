@@ -24,6 +24,21 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
 
   React.useEffect(() => { stateRef.current = state; onGuessRef.current = onGuess; });
 
+  // Auto-fit when a new target is issued (entering await-guess) so user doesn't need to press State each time
+  React.useEffect(() => {
+    if (!mapRef.current) return;
+    if (state.state === 'await-guess' && state.currentTargetId) {
+      // slight delay allows any layout transitions to finish
+      const t = setTimeout(() => {
+        const meta = getStateMetadata(state.stateId || stateId);
+        if (meta?.bounds) {
+          safeFitBounds(mapRef.current, [[meta.bounds[0], meta.bounds[1]],[meta.bounds[2], meta.bounds[3]]], { padding: 30, duration: 650 });
+        }
+      }, 120);
+      return () => clearTimeout(t);
+    }
+  }, [state.state, state.currentTargetId, state.stateId, stateId]);
+
   const fitSelectedState = React.useCallback(() => {
     if (!mapRef.current) return;
     const meta = getStateMetadata(stateId);

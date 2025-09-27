@@ -34,14 +34,14 @@ export default function App() {
       <header className="flex items-center justify-between px-4 h-14 bg-slate-900 border-b border-slate-800 shrink-0">
         <h1 className="text-sm sm:text-lg font-semibold tracking-wide line-clamp-1">MapLocator – {config.stateId.replace('_',' ')} Practice</h1>
         <div className="flex items-center gap-2">
-          <div className="text-xs sm:text-sm opacity-80">Score: {state.score}</div>
-          <button onClick={() => setMobilePanelOpen(o => !o)} className="sm:hidden px-2 py-1 text-xs rounded bg-slate-800 border border-slate-700">
+          <div className="hidden md:block text-sm opacity-80">Score: {state.score}</div>
+          <button onClick={() => setMobilePanelOpen(o => !o)} className="px-2 py-1 text-xs sm:text-sm rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">
             {mobilePanelOpen ? 'Close' : 'Menu'}
           </button>
         </div>
       </header>
       <main className="relative flex-1 overflow-hidden">
-        <div className="absolute inset-0 flex sm:flex-row flex-col">
+        <div className="absolute inset-0 flex flex-col">
           <div className="flex-1 relative bg-slate-900">
             <MapView
               state={state}
@@ -49,6 +49,37 @@ export default function App() {
               onGuess={submitGuess}
               stateId={config.stateId}
             />
+            {/* Persistent session bar (now for all sizes) */}
+            {state.state !== 'idle' && (
+              <div className="absolute left-0 top-14 z-20 px-2 sm:pl-4 sm:pt-2 w-full pointer-events-none">
+                <div className="max-w-xs sm:max-w-sm bg-slate-900/90 backdrop-blur rounded-md border border-slate-700 px-3 py-2 flex flex-col gap-1 shadow-sm pointer-events-auto">
+                  <div className="flex items-center justify-between text-[11px] uppercase tracking-wide opacity-80">
+                    <span>Round {state.round}{state.totalRounds ? ` / ${state.totalRounds}` : ''}</span>
+                    <span className="font-mono">{state.score}</span>
+                  </div>
+                  {state.state === 'await-guess' && state.currentTargetId && (
+                    <div className="text-xs mb-1"><span className="opacity-70">Locate:</span> <span className="font-semibold">{state.currentTargetId}</span></div>
+                  )}
+                  {state.state === 'reveal' && lastGuess && (
+                    <div className="text-[11px] mb-1 flex items-center gap-2"><span className="font-semibold">Result</span><span>{lastGuess.distanceKm.toFixed(1)} km</span><span className="opacity-70">+{lastGuess.pointsAwarded}</span></div>
+                  )}
+                  <div className="flex items-center gap-2">
+                    {state.state === 'await-guess' && (
+                      <button onClick={skip} className="flex-1 bg-slate-800 hover:bg-slate-700 rounded text-[11px] py-1">Skip</button>
+                    )}
+                    {state.state === 'reveal' && state.round < (state.totalRounds || 0) && (
+                      <button onClick={next} className="flex-1 bg-slate-800 hover:bg-slate-700 rounded text-[11px] py-1">Next</button>
+                    )}
+                    {state.state === 'reveal' && state.round >= (state.totalRounds || 0) && (
+                      <button onClick={reset} className="flex-1 bg-slate-800 hover:bg-slate-700 rounded text-[11px] py-1">Restart</button>
+                    )}
+                  </div>
+                  <div className="mt-1 h-1.5 bg-slate-800 rounded overflow-hidden">
+                    <span className="block h-full bg-gradient-to-r from-success via-warn to-error" style={{ width: `${state.totalRounds ? (state.round / state.totalRounds) * 100 : 0}%` }} />
+                  </div>
+                </div>
+              </div>
+            )}
             {state.state === 'idle' && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="pointer-events-auto bg-slate-900/80 p-4 sm:p-6 rounded-lg border border-slate-700 w-72 sm:w-80 text-center space-y-4">
@@ -59,39 +90,20 @@ export default function App() {
               </div>
             )}
           </div>
-          {/* Desktop / large panel */}
-          <aside className="hidden sm:flex w-[var(--panel-width)] border-l border-slate-800 bg-slate-900 p-4 flex-col gap-6 overflow-y-auto">
-            <GamePanel state={state} config={config} lastGuess={lastGuess} start={start} next={next} reset={reset} skip={skip} />
-            <SettingsSection {...{ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat }} />
-            <FooterSection />
-          </aside>
         </div>
-        {/* Mobile slide-over (default) */}
-        <div className={`sm:hidden fixed inset-y-0 right-0 w-72 max-w-full bg-slate-900 border-l border-slate-800 z-30 transform transition-transform duration-300 flex flex-col md:[--safe-bottom:env(safe-area-inset-bottom)] ${mobilePanelOpen ? 'translate-x-0' : 'translate-x-full'}
-        2xs:hidden`}> {/* hidden on ultra small screens; custom bottom sheet fallback shown below */}
+        {/* Unified slide-over panel for all breakpoints */}
+        <div className={`fixed inset-y-0 right-0 w-[min(340px,90vw)] bg-slate-900 border-l border-slate-800 z-30 transform transition-transform duration-300 flex flex-col ${mobilePanelOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex items-center justify-between px-3 h-12 border-b border-slate-800 pt-[env(safe-area-inset-top)]">
             <span className="text-sm font-medium">Menu</span>
             <button onClick={() => setMobilePanelOpen(false)} className="px-2 py-1 text-xs bg-slate-800 rounded border border-slate-700">Close</button>
           </div>
-          <div className="flex-1 overflow-y-auto p-3 flex flex-col gap-6 pb-[env(safe-area-inset-bottom)]">
+          <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-6 pb-[env(safe-area-inset-bottom)]">
             <GamePanel state={state} config={config} lastGuess={lastGuess} start={start} next={next} reset={reset} skip={skip} />
             <SettingsSection {...{ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat }} />
             <FooterSection />
           </div>
         </div>
-        {/* Ultra-small bottom sheet (e.g., very short landscape phones) */}
-        <div className={`sm:hidden fixed left-0 right-0 bottom-0 bg-slate-900 border-t border-slate-800 z-30 transform transition-transform duration-300 flex flex-col p-3 gap-5 2xs:flex ${mobilePanelOpen ? 'translate-y-0' : 'translate-y-full'}`} style={{ maxHeight: '70%', paddingBottom: 'calc(env(safe-area-inset-bottom) + 0.75rem)' }}>
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-medium">Session</span>
-            <button onClick={() => setMobilePanelOpen(false)} className="px-2 py-1 text-xs bg-slate-800 rounded border border-slate-700">Close</button>
-          </div>
-          <div className="flex-1 overflow-y-auto flex flex-col gap-6">
-            <GamePanel state={state} config={config} lastGuess={lastGuess} start={start} next={next} reset={reset} skip={skip} />
-            <SettingsSection {...{ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat }} />
-            <FooterSection />
-          </div>
-        </div>
-        {mobilePanelOpen && <div onClick={() => setMobilePanelOpen(false)} className="sm:hidden fixed inset-0 bg-black/40 backdrop-blur-[1px] z-20" />}
+        {mobilePanelOpen && <div onClick={() => setMobilePanelOpen(false)} className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-20" />}
       </main>
     </div>
   );
