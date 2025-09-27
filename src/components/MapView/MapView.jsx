@@ -113,7 +113,8 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
         map.fitBounds([[minLng, minLat],[maxLng, maxLat]], { padding: 60, duration: 700 });
       }
 
-  const city = findCity(state.currentTargetId, state.config?.stateId || stateId);
+  const effectiveStateId = state.stateId || stateId;
+  const city = findCity(state.currentTargetId, effectiveStateId);
       if (city) {
         if (popupRef.current) popupRef.current.remove();
         const [lng, lat] = city.geometry.coordinates;

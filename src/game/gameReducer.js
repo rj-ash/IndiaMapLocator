@@ -2,8 +2,8 @@ import { scoreHybrid, scoreThreshold } from './scoring.js';
 import { getCityCoordinates, weightedCityPool } from '../data/index.js';
 import distance from '@turf/distance';
 
-function createInitialState(rounds, scoringMode) {
-  return { round: 0, totalRounds: rounds, currentTargetId: null, guesses: [], score: 0, state: 'idle', lastBreakdown: null, scoringMode };
+function createInitialState(rounds, scoringMode, stateId) {
+  return { round: 0, totalRounds: rounds, currentTargetId: null, guesses: [], score: 0, state: 'idle', lastBreakdown: null, scoringMode, stateId };
 }
 
 // Simple weighted selection (importance used directly)
@@ -28,19 +28,19 @@ function pickTarget(pool, usedIds, allowRepeat, totalRounds, currentRound) {
 export function gameReducer(state, action) {
   switch(action.type) {
     case 'INIT_SESSION': {
-      return createInitialState(action.rounds, action.scoringMode);
+      return createInitialState(action.rounds, action.scoringMode, action.stateId);
     }
     case 'NEXT_TARGET': {
       if (state.round >= state.totalRounds) return { ...state, state: 'summary' };
-  const pool = weightedCityPool(action.scope, action.stateId);
+  const pool = weightedCityPool(action.scope, action.stateId || state.stateId);
   const usedIds = new Set(state.guesses.map(g => g.targetId));
   const id = pickTarget(pool, usedIds, action.allowRepeatTargets, state.totalRounds, state.round);
       if (!id) return { ...state, state: 'summary' };
-      return { ...state, currentTargetId: id, state: 'await-guess', round: state.round + 1 };
+      return { ...state, currentTargetId: id, state: 'await-guess', round: state.round + 1, stateId: action.stateId || state.stateId };
     }
     case 'SUBMIT_GUESS': {
       if (state.state !== 'await-guess' || !state.currentTargetId) return state;
-      const actual = getCityCoordinates(state.currentTargetId);
+      const actual = getCityCoordinates(state.currentTargetId, action.stateId || state.stateId);
       if (!actual) return { ...state, state: 'reveal' };
       const distKm = distance(action.coords, actual, { units: 'kilometers' });
       let result;
@@ -58,7 +58,7 @@ export function gameReducer(state, action) {
       return { ...state, state: 'prompt' };
     }
     case 'RESET': {
-      return createInitialState(state.totalRounds);
+      return createInitialState(state.totalRounds, state.scoringMode, state.stateId);
     }
     default:
       return state;

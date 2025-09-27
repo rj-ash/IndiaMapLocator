@@ -10,7 +10,7 @@ export function useGameEngine(config = defaultConfig) {
     // Auto rounds: number of unique targets in pool (no repeats)
     const pool = weightedCityPool(config.targetScope, config.stateId);
     const rounds = config.rounds === 'auto' ? pool.length : config.rounds;
-    dispatch({ type: 'INIT_SESSION', rounds, scoringMode: config.scoringMode });
+  dispatch({ type: 'INIT_SESSION', rounds, scoringMode: config.scoringMode, stateId: config.stateId });
     dispatch({ type: 'NEXT_TARGET', scope: config.targetScope, stateId: config.stateId, allowRepeatTargets: config.allowRepeatTargets });
   }, [config.rounds, config.targetScope, config.scoringMode, config.stateId, config.allowRepeatTargets]);
 
