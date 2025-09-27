@@ -10,6 +10,20 @@ html, body, #root { height: 100%; }
   --panel-width: 340px;
 }
 
+@media (max-width: 640px) {
+  :root { --panel-width: 300px; }
+}
+
+/* Support modern dynamic viewport units for mobile address bar collapse */
+@supports (height: 100dvh) {
+  .h-dvh { height: 100dvh; }
+  .max-h-dvh { max-height: 100dvh; }
+}
+
+/* Fallback if 100dvh unsupported */
+.h-dvh { height: 100vh; }
+.max-h-dvh { max-height: 100vh; }
+
 @keyframes pulse-ring {
   0% {
     transform: scale(0.6);

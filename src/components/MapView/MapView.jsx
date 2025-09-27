@@ -28,14 +28,14 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
     if (!mapRef.current) return;
     const meta = getStateMetadata(stateId);
     if (meta?.bounds) {
-      mapRef.current.fitBounds([[meta.bounds[0], meta.bounds[1]],[meta.bounds[2], meta.bounds[3]]], { padding: 30, duration: 700 });
+      safeFitBounds(mapRef.current, [[meta.bounds[0], meta.bounds[1]],[meta.bounds[2], meta.bounds[3]]], { padding: 30, duration: 700 });
     }
   }, [stateId]);
 
   const fitIndia = React.useCallback(() => {
     if (!mapRef.current) return;
     // Rough India bbox (W,S,E,N)
-    mapRef.current.fitBounds([[68.0, 7.5],[97.5, 37.5]], { padding: 30, duration: 900 });
+    safeFitBounds(mapRef.current, [[68.0, 7.5],[97.5, 37.5]], { padding: 30, duration: 900 });
   }, []);
 
   React.useEffect(() => {
@@ -93,6 +93,13 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
 
     return () => { if (popupRef.current) popupRef.current.remove(); map.remove(); };
   }, [fitIndia]);
+
+  // Handle container resize (including when mobile panel slides over) by listening to window resize
+  React.useEffect(() => {
+    const handler = () => { if (mapRef.current) mapRef.current.resize(); };
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, []);
   // Reveal / update effect
   React.useEffect(() => {
     const map = mapRef.current; if (!map || !map.isStyleLoaded()) return;
@@ -110,7 +117,7 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
       const maxLng = Math.max(last.guessCoord[0], last.actualCoord[0]);
       const maxLat = Math.max(last.guessCoord[1], last.actualCoord[1]);
       if (Math.hypot(maxLng - minLng, maxLat - minLat) < 0.8) {
-        map.fitBounds([[minLng, minLat],[maxLng, maxLat]], { padding: 60, duration: 700 });
+        safeFitBounds(map, [[minLng, minLat],[maxLng, maxLat]], { padding: 60, duration: 700 });
       }
 
   const effectiveStateId = state.stateId || stateId;
@@ -157,4 +164,32 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
       </div>
     </div>
   );
+}
+
+// Attempt a fitBounds safely: retries if container has zero size (during CSS transitions) and slightly pads degenerate bounds.
+function safeFitBounds(map, bounds, options = {}) {
+  const maxAttempts = 5;
+  let attempt = 0;
+  function tryFit() {
+    const canvas = map.getCanvas();
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    if (w === 0 || h === 0) {
+      if (attempt < maxAttempts) {
+        attempt += 1;
+        return setTimeout(tryFit, 80);
+      }
+      return; // give up silently
+    }
+    // Guard: if bounds collapse to a point or line with negligible area, expand slightly
+    let [[wLng, sLat],[eLng, nLat]] = bounds;
+    if (Math.abs(eLng - wLng) < 0.0005) { wLng -= 0.01; eLng += 0.01; }
+    if (Math.abs(nLat - sLat) < 0.0005) { sLat -= 0.01; nLat += 0.01; }
+    try {
+      map.fitBounds([[wLng, sLat],[eLng, nLat]], options);
+    } catch (err) {
+      // Swallow the specific fit error to avoid console noise
+    }
+  }
+  tryFit();
 }
