@@ -1,4 +1,5 @@
 import React from 'react';
+import { getCities, getDistricts } from '../../data/index.js';
 
 function DistanceBadge({ km }) {
   let color = 'bg-slate-700';
@@ -23,8 +24,12 @@ export default function GamePanel({ state, config, lastGuess, start, next, reset
   const total = state.totalRounds || config.rounds || 0;
   const progressPct = total ? Math.min(state.round / total, 1) * 100 : 0;
 
+  const [listsOpen, setListsOpen] = React.useState(true);
+  const cities = React.useMemo(() => getCities(config.stateId).features, [config.stateId]);
+  const districts = React.useMemo(() => getDistricts(config.stateId).features, [config.stateId]);
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div aria-live="polite" className="sr-only" ref={liveRef} />
       <section>
         <h2 className="font-medium mb-2">Session</h2>
@@ -64,6 +69,38 @@ export default function GamePanel({ state, config, lastGuess, start, next, reset
             <button onClick={reset} className="px-3 py-1 bg-slate-800 hover:bg-slate-700 rounded text-xs w-full">Reset</button>
           )}
         </div>
+      </section>
+      <section>
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="font-medium">Data</h2>
+          <button onClick={() => setListsOpen(o => !o)} className="text-xs px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-700">{listsOpen ? 'Hide' : 'Show'}</button>
+        </div>
+        {listsOpen && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs max-h-64 overflow-auto pr-1">
+            <div>
+              <div className="flex items-center justify-between mb-1 font-semibold uppercase tracking-wide text-[10px] opacity-70">
+                <span>Cities</span><span>{cities.length}</span>
+              </div>
+              <ul className="space-y-0.5">
+                {cities.map(c => (
+                  <li key={c.properties.id} className="flex items-center gap-1">
+                    <span className={`truncate ${c.properties.type === 'district_hq' ? 'text-success font-medium' : ''}`}>{c.properties.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <div className="flex items-center justify-between mb-1 font-semibold uppercase tracking-wide text-[10px] opacity-70">
+                <span>Districts</span><span>{districts.features ? districts.features.length : districts.length}</span>
+              </div>
+              <ul className="space-y-0.5">
+                {(districts.features || districts).map(d => (
+                  <li key={d.properties.id} className="truncate">{d.properties.name}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );

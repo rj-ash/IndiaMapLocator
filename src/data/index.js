@@ -4,6 +4,8 @@ import hpCities from './himachal_pradesh/cities.geo.json';
 import hpDistricts from './himachal_pradesh/districts.geo.json';
 import dlCities from './delhi/cities.geo.json';
 import dlDistricts from './delhi/districts.geo.json';
+import * as up from './uttar_pradesh/index.js';
+import * as mp from './madhya_pradesh/index.js';
 
 function buildSimpleState(cities, districts, meta) {
   const cityById = new Map(cities.features.map(f => [f.properties.id, f]));
@@ -16,20 +18,23 @@ function buildSimpleState(cities, districts, meta) {
     },
     getCityCoordinates: (id) => { const f = cityById.get(id); return f ? f.geometry.coordinates.slice() : null; },
     findCity: (id) => cityById.get(id),
-    getDistricts: () => districts
+    getDistricts: () => districts,
+    getCities: () => cities
   };
 }
 
 const hp = buildSimpleState(hpCities, hpDistricts, { id:'india:himachal_pradesh', name:'Himachal Pradesh', bounds:[75.5,30.3,79.0,33.2], center:[77.2,31.7] });
 const dl = buildSimpleState(dlCities, dlDistricts, { id:'india:delhi', name:'Delhi / NCR', bounds:[76.9,28.3,77.6,28.9], center:[77.2,28.6] });
 
-const registry = { uttarakhand: uk, himachal_pradesh: hp, delhi: dl };
+const registry = { uttarakhand: uk, himachal_pradesh: hp, delhi: dl, uttar_pradesh: up, madhya_pradesh: mp };
 
 export function listStates() {
   return [
     { id: 'uttarakhand', label: 'Uttarakhand', meta: uk.getStateMetadata() },
     { id: 'himachal_pradesh', label: 'Himachal Pradesh', meta: hp.getStateMetadata() },
-    { id: 'delhi', label: 'Delhi / NCR', meta: dl.getStateMetadata() }
+    { id: 'delhi', label: 'Delhi / NCR', meta: dl.getStateMetadata() },
+    { id: 'uttar_pradesh', label: 'Uttar Pradesh', meta: up.getStateMetadata() },
+    { id: 'madhya_pradesh', label: 'Madhya Pradesh', meta: mp.getStateMetadata() }
   ];
 }
 
@@ -39,3 +44,4 @@ export function getCityCoordinates(id, stateId='uttarakhand') { return getStateM
 export function findCity(id, stateId='uttarakhand') { return getStateModule(stateId).findCity(id); }
 export function getStateMetadata(stateId='uttarakhand') { return getStateModule(stateId).getStateMetadata(); }
 export function getDistricts(stateId='uttarakhand') { return getStateModule(stateId).getDistricts ? getStateModule(stateId).getDistricts() : { type:'FeatureCollection', features:[] }; }
+export function getCities(stateId='uttarakhand') { return getStateModule(stateId).getCities ? getStateModule(stateId).getCities() : { type:'FeatureCollection', features:[] }; }

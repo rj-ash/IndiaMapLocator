@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"bhopal","name":"Bhopal"},"geometry":{"type":"Polygon","coordinates":[[[77.25,23.45],[77.6,23.45],[77.6,23.05],[77.25,23.05],[77.25,23.45]]]}},
+    {"type":"Feature","properties":{"id":"indore","name":"Indore"},"geometry":{"type":"Polygon","coordinates":[[[75.55,22.95],[76.05,22.95],[76.05,22.45],[75.55,22.45],[75.55,22.95]]]}},
+    {"type":"Feature","properties":{"id":"gwalior","name":"Gwalior"},"geometry":{"type":"Polygon","coordinates":[[[77.95,26.45],[78.45,26.45],[78.45,26.05],[77.95,26.05],[77.95,26.45]]]}},
+    {"type":"Feature","properties":{"id":"jabalpur","name":"Jabalpur"},"geometry":{"type":"Polygon","coordinates":[[[79.7,23.45],[80.25,23.45],[80.25,22.95],[79.7,22.95],[79.7,23.45]]]}},
+    {"type":"Feature","properties":{"id":"ujjain","name":"Ujjain"},"geometry":{"type":"Polygon","coordinates":[[[75.55,23.45],[76.05,23.45],[76.05,23.05],[75.55,23.05],[75.55,23.45]]]}},
+    {"type":"Feature","properties":{"id":"sagar","name":"Sagar"},"geometry":{"type":"Polygon","coordinates":[[[78.45,24.05],[79.00,24.05],[79.00,23.65],[78.45,23.65],[78.45,24.05]]]}},
+    {"type":"Feature","properties":{"id":"satna","name":"Satna"},"geometry":{"type":"Polygon","coordinates":[[[80.55,24.85],[81.15,24.85],[81.15,24.45],[80.55,24.45],[80.55,24.85]]]}},
+    {"type":"Feature","properties":{"id":"rewa","name":"Rewa"},"geometry":{"type":"Polygon","coordinates":[[[81.05,24.75],[81.55,24.75],[81.55,24.35],[81.05,24.35],[81.05,24.75]]]}},
+    {"type":"Feature","properties":{"id":"ratlam","name":"Ratlam"},"geometry":{"type":"Polygon","coordinates":[[[74.85,23.55],[75.35,23.55],[75.35,23.15],[74.85,23.15],[74.85,23.55]]]}},
+    {"type":"Feature","properties":{"id":"khandwa","name":"Khandwa"},"geometry":{"type":"Polygon","coordinates":[[[76.15,22.05],[76.65,22.05],[76.65,21.65],[76.15,21.65],[76.15,22.05]]]}},
+    {"type":"Feature","properties":{"id":"chhindwara","name":"Chhindwara"},"geometry":{"type":"Polygon","coordinates":[[[78.65,22.25],[79.25,22.25],[79.25,21.85],[78.65,21.85],[78.65,22.25]]]}},
+    {"type":"Feature","properties":{"id":"shivpuri","name":"Shivpuri"},"geometry":{"type":"Polygon","coordinates":[[[77.35,25.65],[77.95,25.65],[77.95,25.25],[77.35,25.25],[77.35,25.65]]]}},
+    {"type":"Feature","properties":{"id":"vidisha","name":"Vidisha"},"geometry":{"type":"Polygon","coordinates":[[[77.55,23.75],[78.05,23.75],[78.05,23.35],[77.55,23.35],[77.55,23.75]]]}},
+    {"type":"Feature","properties":{"id":"damoh","name":"Damoh"},"geometry":{"type":"Polygon","coordinates":[[[79.15,24.05],[79.65,24.05],[79.65,23.65],[79.15,23.65],[79.15,24.05]]]}},
+    {"type":"Feature","properties":{"id":"sehore","name":"Sehore"},"geometry":{"type":"Polygon","coordinates":[[[76.85,23.45],[77.35,23.45],[77.35,23.05],[76.85,23.05],[76.85,23.45]]]}},
+    {"type":"Feature","properties":{"id":"hoshangabad","name":"Hoshangabad"},"geometry":{"type":"Polygon","coordinates":[[[77.45,23.05],[78.05,23.05],[78.05,22.55],[77.45,22.55],[77.45,23.05]]]}},
+    {"type":"Feature","properties":{"id":"mandla","name":"Mandla"},"geometry":{"type":"Polygon","coordinates":[[[80.15,22.85],[80.65,22.85],[80.65,22.45],[80.15,22.45],[80.15,22.85]]]}},
+    {"type":"Feature","properties":{"id":"betul","name":"Betul"},"geometry":{"type":"Polygon","coordinates":[[[77.65,22.15],[78.15,22.15],[78.15,21.75],[77.65,21.75],[77.65,22.15]]]}},
+    {"type":"Feature","properties":{"id":"chhatarpur","name":"Chhatarpur"},"geometry":{"type":"Polygon","coordinates":[[[79.35,25.15],[79.95,25.15],[79.95,24.75],[79.35,24.75],[79.35,25.15]]]} }
+  ]
+}

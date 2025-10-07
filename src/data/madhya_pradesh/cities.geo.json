@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"bhopal","name":"Bhopal","type":"district_hq","importance":5,"districtId":"bhopal"},"geometry":{"type":"Point","coordinates":[77.4126,23.2599]}},
+    {"type":"Feature","properties":{"id":"indore","name":"Indore","type":"district_hq","importance":5,"districtId":"indore"},"geometry":{"type":"Point","coordinates":[75.8577,22.7196]}},
+    {"type":"Feature","properties":{"id":"gwalior","name":"Gwalior","type":"district_hq","importance":4,"districtId":"gwalior"},"geometry":{"type":"Point","coordinates":[78.1828,26.2183]}},
+    {"type":"Feature","properties":{"id":"jabalpur","name":"Jabalpur","type":"district_hq","importance":4,"districtId":"jabalpur"},"geometry":{"type":"Point","coordinates":[79.9449,23.1815]}},
+    {"type":"Feature","properties":{"id":"ujjain","name":"Ujjain","type":"district_hq","importance":4,"districtId":"ujjain"},"geometry":{"type":"Point","coordinates":[75.7860,23.1765]}},
+    {"type":"Feature","properties":{"id":"sagar","name":"Sagar","type":"district_hq","importance":3,"districtId":"sagar"},"geometry":{"type":"Point","coordinates":[78.7340,23.8388]}},
+    {"type":"Feature","properties":{"id":"satna","name":"Satna","type":"district_hq","importance":3,"districtId":"satna"},"geometry":{"type":"Point","coordinates":[80.8322,24.5870]}},
+    {"type":"Feature","properties":{"id":"rewa","name":"Rewa","type":"district_hq","importance":3,"districtId":"rewa"},"geometry":{"type":"Point","coordinates":[81.3008,24.5362]}},
+    {"type":"Feature","properties":{"id":"ratlam","name":"Ratlam","type":"district_hq","importance":3,"districtId":"ratlam"},"geometry":{"type":"Point","coordinates":[75.0367,23.3301]}},
+    {"type":"Feature","properties":{"id":"khandwa","name":"Khandwa","type":"district_hq","importance":2,"districtId":"khandwa"},"geometry":{"type":"Point","coordinates":[76.3520,21.8257]}},
+    {"type":"Feature","properties":{"id":"chhindwara","name":"Chhindwara","type":"district_hq","importance":2,"districtId":"chhindwara"},"geometry":{"type":"Point","coordinates":[78.9397,22.0580]}},
+    {"type":"Feature","properties":{"id":"shivpuri","name":"Shivpuri","type":"district_hq","importance":2,"districtId":"shivpuri"},"geometry":{"type":"Point","coordinates":[77.6520,25.4231]}},
+    {"type":"Feature","properties":{"id":"vidisha","name":"Vidisha","type":"district_hq","importance":2,"districtId":"vidisha"},"geometry":{"type":"Point","coordinates":[77.8090,23.5260]}},
+    {"type":"Feature","properties":{"id":"damoh","name":"Damoh","type":"district_hq","importance":2,"districtId":"damoh"},"geometry":{"type":"Point","coordinates":[79.4413,23.8390]}},
+    {"type":"Feature","properties":{"id":"sehore","name":"Sehore","type":"district_hq","importance":2,"districtId":"sehore"},"geometry":{"type":"Point","coordinates":[77.0800,23.2036]}},
+    {"type":"Feature","properties":{"id":"hoshangabad","name":"Narmadapuram (Hoshangabad)","type":"district_hq","importance":2,"districtId":"hoshangabad"},"geometry":{"type":"Point","coordinates":[77.7315,22.7441]}},
+    {"type":"Feature","properties":{"id":"mandla","name":"Mandla","type":"district_hq","importance":2,"districtId":"mandla"},"geometry":{"type":"Point","coordinates":[80.3839,22.5979]}},
+    {"type":"Feature","properties":{"id":"betul","name":"Betul","type":"district_hq","importance":2,"districtId":"betul"},"geometry":{"type":"Point","coordinates":[77.9061,21.9020]}},
+    {"type":"Feature","properties":{"id":"chhatarpur","name":"Chhatarpur","type":"district_hq","importance":2,"districtId":"chhatarpur"},"geometry":{"type":"Point","coordinates":[79.5960,24.9190]}}
+  ]
+}

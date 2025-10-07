@@ -1,0 +1,30 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"lucknow","name":"Lucknow","type":"district_hq","importance":5,"districtId":"lucknow"},"geometry":{"type":"Point","coordinates":[80.9462,26.8467]}},
+    {"type":"Feature","properties":{"id":"kanpur","name":"Kanpur","type":"city","importance":4,"districtId":"kanpur_nagar"},"geometry":{"type":"Point","coordinates":[80.3319,26.4499]}},
+    {"type":"Feature","properties":{"id":"allahabad","name":"Prayagraj (Allahabad)","type":"district_hq","importance":5,"districtId":"prayagraj"},"geometry":{"type":"Point","coordinates":[81.8463,25.4358]}},
+    {"type":"Feature","properties":{"id":"varanasi","name":"Varanasi","type":"district_hq","importance":5,"districtId":"varanasi"},"geometry":{"type":"Point","coordinates":[82.9739,25.3176]}},
+    {"type":"Feature","properties":{"id":"agra","name":"Agra","type":"district_hq","importance":5,"districtId":"agra"},"geometry":{"type":"Point","coordinates":[78.0081,27.1767]}},
+    {"type":"Feature","properties":{"id":"meerut","name":"Meerut","type":"district_hq","importance":4,"districtId":"meerut"},"geometry":{"type":"Point","coordinates":[77.7064,28.9845]}},
+    {"type":"Feature","properties":{"id":"ghaziabad","name":"Ghaziabad","type":"district_hq","importance":4,"districtId":"ghaziabad"},"geometry":{"type":"Point","coordinates":[77.4538,28.6692]}},
+    {"type":"Feature","properties":{"id":"noida","name":"Noida","type":"city","importance":4,"districtId":"gautam_buddha_nagar"},"geometry":{"type":"Point","coordinates":[77.3910,28.5355]}},
+    {"type":"Feature","properties":{"id":"mathura","name":"Mathura","type":"district_hq","importance":3,"districtId":"mathura"},"geometry":{"type":"Point","coordinates":[77.6680,27.4924]}},
+    {"type":"Feature","properties":{"id":"bareilly","name":"Bareilly","type":"district_hq","importance":4,"districtId":"bareilly"},"geometry":{"type":"Point","coordinates":[79.4304,28.3670]}},
+    {"type":"Feature","properties":{"id":"moradabad","name":"Moradabad","type":"district_hq","importance":4,"districtId":"moradabad"},"geometry":{"type":"Point","coordinates":[78.7733,28.8386]}},
+    {"type":"Feature","properties":{"id":"aligarh","name":"Aligarh","type":"district_hq","importance":3,"districtId":"aligarh"},"geometry":{"type":"Point","coordinates":[78.0880,27.8974]}},
+    {"type":"Feature","properties":{"id":"gorakhpur","name":"Gorakhpur","type":"district_hq","importance":4,"districtId":"gorakhpur"},"geometry":{"type":"Point","coordinates":[83.3732,26.7606]}},
+    {"type":"Feature","properties":{"id":"faizabad","name":"Ayodhya (Faizabad)","type":"district_hq","importance":4,"districtId":"ayodhya"},"geometry":{"type":"Point","coordinates":[82.1947,26.7994]}},
+    {"type":"Feature","properties":{"id":"saharanpur","name":"Saharanpur","type":"district_hq","importance":3,"districtId":"saharanpur"},"geometry":{"type":"Point","coordinates":[77.5510,29.9679]}},
+    {"type":"Feature","properties":{"id":"firozabad","name":"Firozabad","type":"district_hq","importance":2,"districtId":"firozabad"},"geometry":{"type":"Point","coordinates":[78.4011,27.1509]}},
+    {"type":"Feature","properties":{"id":"azamgarh","name":"Azamgarh","type":"district_hq","importance":2,"districtId":"azamgarh"},"geometry":{"type":"Point","coordinates":[83.1840,26.0734]}},
+    {"type":"Feature","properties":{"id":"basti","name":"Basti","type":"district_hq","importance":2,"districtId":"basti"},"geometry":{"type":"Point","coordinates":[82.7326,26.7920]}},
+    {"type":"Feature","properties":{"id":"sitapur","name":"Sitapur","type":"district_hq","importance":2,"districtId":"sitapur"},"geometry":{"type":"Point","coordinates":[80.6826,27.5619]}},
+    {"type":"Feature","properties":{"id":"etawah","name":"Etawah","type":"district_hq","importance":2,"districtId":"etawah"},"geometry":{"type":"Point","coordinates":[79.0210,26.7850]}},
+    {"type":"Feature","properties":{"id":"ballia","name":"Ballia","type":"district_hq","importance":2,"districtId":"ballia"},"geometry":{"type":"Point","coordinates":[84.1495,25.7604]}},
+    {"type":"Feature","properties":{"id":"muzaffarnagar","name":"Muzaffarnagar","type":"district_hq","importance":2,"districtId":"muzaffarnagar"},"geometry":{"type":"Point","coordinates":[77.7046,29.4727]}},
+    {"type":"Feature","properties":{"id":"bijnor","name":"Bijnor","type":"district_hq","importance":2,"districtId":"bijnor"},"geometry":{"type":"Point","coordinates":[78.1361,29.3724]}},
+    {"type":"Feature","properties":{"id":"hardoi","name":"Hardoi","type":"district_hq","importance":2,"districtId":"hardoi"},"geometry":{"type":"Point","coordinates":[80.1227,27.3943]}},
+    {"type":"Feature","properties":{"id":"bahraich","name":"Bahraich","type":"district_hq","importance":2,"districtId":"bahraich"},"geometry":{"type":"Point","coordinates":[81.5959,27.5743]}}
+  ]
+}
