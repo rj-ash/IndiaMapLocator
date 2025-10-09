@@ -1,10 +1,7 @@
 import React from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import ukDistricts from '../../data/uttarakhand/districts.geo.json';
-import hpDistricts from '../../data/himachal_pradesh/districts.geo.json';
-import dlDistricts from '../../data/delhi/districts.geo.json';
-import { findCity, getStateMetadata } from '../../data/index.js';
+import { findCity, getStateMetadata, getCities, getDistricts, getOverlays } from '../../data/index.js';
 // India state boundaries fetched at runtime (see load handler) – authoritative dataset.
 // Dataset source (ODbL via OSM derived): https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson
 
@@ -14,8 +11,13 @@ const GUESS_SOURCE_ID = 'guess-src';
 const GUESS_LAYER_ID = 'guess-layer';
 const TARGET_LAYER_ID = 'target-layer';
 const LINE_LAYER_ID = 'guess-line';
+const ALL_CITIES_SOURCE_ID = 'all-cities-src'; // retained but hidden (we'll not show layer outlines)
+const OVERLAY_SOURCE_ID = 'state-overlays-src';
+const OVERLAY_LAKE_LAYER_ID = 'overlay-lake-fill';
+const OVERLAY_LAKE_OUTLINE_LAYER_ID = 'overlay-lake-outline';
+const OVERLAY_CANAL_LAYER_ID = 'overlay-canal-line';
 
-export default function MapView({ state, showOutlines, onGuess, stateId='uttarakhand' }) {
+export default function MapView({ state, showOutlines, onGuess, stateId='', showAllLocations=false }) {
   const mapRef = React.useRef(null);
   const containerRef = React.useRef(null);
   const popupRef = React.useRef(null);
@@ -27,7 +29,7 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
   // Auto-fit when a new target is issued (entering await-guess) so user doesn't need to press State each time
   React.useEffect(() => {
     if (!mapRef.current) return;
-    if (state.state === 'await-guess' && state.currentTargetId) {
+  if (state.state === 'await-guess' && state.currentTargetId && (state.stateId || stateId)) {
       // slight delay allows any layout transitions to finish
       const t = setTimeout(() => {
         const meta = getStateMetadata(state.stateId || stateId);
@@ -41,7 +43,8 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
 
   const fitSelectedState = React.useCallback(() => {
     if (!mapRef.current) return;
-    const meta = getStateMetadata(stateId);
+  if (!stateId) return;
+  const meta = getStateMetadata(stateId);
     if (meta?.bounds) {
       safeFitBounds(mapRef.current, [[meta.bounds[0], meta.bounds[1]],[meta.bounds[2], meta.bounds[3]]], { padding: 30, duration: 700 });
     }
@@ -65,7 +68,7 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
 
     map.addControl(new maplibregl.AttributionControl({ compact: true }));
 
-    map.on('load', () => {
+  map.on('load', () => {
       // Fetch accurate India state boundaries
       fetch('https://raw.githubusercontent.com/geohacker/india/master/state/india_state.geojson')
         .then(r => r.json())
@@ -96,6 +99,17 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
       map.addLayer({ id: GUESS_LAYER_ID, type: 'circle', source: GUESS_SOURCE_ID, filter: ['==', ['get','role'], 'guess'], paint: { 'circle-radius': 6, 'circle-color': '#f59e0b', 'circle-stroke-width': 2, 'circle-stroke-color': '#000' } });
       map.addLayer({ id: TARGET_LAYER_ID, type: 'circle', source: GUESS_SOURCE_ID, filter: ['==', ['get','role'], 'target'], paint: { 'circle-radius': 7, 'circle-color': '#16a34a', 'circle-stroke-width': 2, 'circle-stroke-color': '#000', 'circle-opacity': 0.9 } });
       map.addLayer({ id: LINE_LAYER_ID, type: 'line', source: GUESS_SOURCE_ID, filter: ['==', ['get','role'], 'line'], paint: { 'line-color': '#f8fafc', 'line-width': 2, 'line-dasharray': [2,2] } });
+      // Hidden source retained (in case future clustering); no visible layers added now.
+      map.addSource(ALL_CITIES_SOURCE_ID, { type: 'geojson', data: { type:'FeatureCollection', features: [] } });
+
+      // Overlays source and layers (lakes and canals)
+      map.addSource(OVERLAY_SOURCE_ID, { type: 'geojson', data: { type:'FeatureCollection', features: [] } });
+      // Lake fill
+      map.addLayer({ id: OVERLAY_LAKE_LAYER_ID, type: 'fill', source: OVERLAY_SOURCE_ID, filter: ['==', ['get','kind'], 'lake'], paint: { 'fill-color': '#60a5fa', 'fill-opacity': 0.25 } });
+      // Lake outline
+      map.addLayer({ id: OVERLAY_LAKE_OUTLINE_LAYER_ID, type: 'line', source: OVERLAY_SOURCE_ID, filter: ['==', ['get','kind'], 'lake'], paint: { 'line-color': '#3b82f6', 'line-width': 1.2 } });
+      // Canal line
+      map.addLayer({ id: OVERLAY_CANAL_LAYER_ID, type: 'line', source: OVERLAY_SOURCE_ID, filter: ['==', ['get','kind'], 'canal'], paint: { 'line-color': '#22d3ee', 'line-width': 2.0, 'line-dasharray': [2,1] } });
       fitIndia();
     });
 
@@ -153,22 +167,66 @@ export default function MapView({ state, showOutlines, onGuess, stateId='uttarak
     }
   }, [state]);
 
-  // Update districts for selected state
+  // Update districts for selected state (independent of showAllLocations now since we removed district labels)
   React.useEffect(() => {
     const map = mapRef.current; if (!map) return;
     const src = map.getSource(DISTRICT_SOURCE_ID); if (!src) return;
-    if (!showOutlines) {
-      if (map.getLayer(DISTRICT_OUTLINE_LAYER_ID)) map.setLayoutProperty(DISTRICT_OUTLINE_LAYER_ID, 'visibility', 'none');
-      return;
+    const needData = (showOutlines || showAllLocations) && !!stateId; // load data only if a state is selected
+    let data = { type:'FeatureCollection', features:[] };
+    try { if (stateId) data = getDistricts(stateId) || data; } catch (_) { /* ignore */ }
+    if (needData) src.setData(data);
+    if (map.getLayer(DISTRICT_OUTLINE_LAYER_ID)) {
+      map.setLayoutProperty(DISTRICT_OUTLINE_LAYER_ID, 'visibility', showOutlines ? 'visible' : 'none');
     }
-    let data;
-    if (stateId === 'uttarakhand') data = ukDistricts;
-    else if (stateId === 'himachal_pradesh') data = hpDistricts;
-    else if (stateId === 'delhi') data = dlDistricts;
-    else data = { type:'FeatureCollection', features:[] };
+  }, [showOutlines, showAllLocations, stateId]);
+
+  // Load per-state overlays (e.g., Sambhar Lake, Indira Gandhi Canal for Rajasthan)
+  React.useEffect(() => {
+    const map = mapRef.current; if (!map) return;
+    const src = map.getSource(OVERLAY_SOURCE_ID); if (!src) return;
+    let data = { type:'FeatureCollection', features: [] };
+    try { if (stateId) data = getOverlays(stateId) || data; } catch(_) {}
     src.setData(data);
-    if (map.getLayer(DISTRICT_OUTLINE_LAYER_ID)) map.setLayoutProperty(DISTRICT_OUTLINE_LAYER_ID, 'visibility', 'visible');
-  }, [showOutlines, stateId]);
+  }, [stateId]);
+
+  // HTML markers for all cities (showAllLocations)
+  const markersRef = React.useRef([]);
+  React.useEffect(() => {
+    const map = mapRef.current; if (!map) return;
+    function ensure() {
+      if (!map.isStyleLoaded()) { setTimeout(ensure, 120); return; }
+      // Clear existing markers
+      markersRef.current.forEach(m => m.remove());
+      markersRef.current = [];
+  if (!showAllLocations || !stateId) return;
+      let citiesFc = { type:'FeatureCollection', features: [] };
+      try {
+        citiesFc = getCities(stateId);
+        if (!citiesFc || !Array.isArray(citiesFc.features)) throw new Error('invalid cities feature collection');
+      } catch (e) {
+        // Fallback: derive from weightedCityPool if available via global registry (already accessible through imported helpers)
+        try {
+          const module = getStateMetadata(stateId); // metadata only; can't reconstruct coords—so leave empty
+        } catch(_) { /* silent */ }
+      }
+      // Auto-fit state when toggling on (helps user see markers if zoomed elsewhere)
+      if (stateId && citiesFc.features.length) {
+        const meta = getStateMetadata(stateId);
+        if (meta?.bounds) safeFitBounds(map, [[meta.bounds[0], meta.bounds[1]],[meta.bounds[2], meta.bounds[3]]], { padding: 40, duration: 600 });
+      }
+      citiesFc.features.forEach(f => {
+        const el = document.createElement('div');
+        el.className = 'city-marker' + (f.properties.type === 'district_hq' ? ' hq' : '');
+        el.innerHTML = `<span class="dot"></span><span class="label-bg">${f.properties.name}</span>`;
+        // Use default anchor; we center the composite; label already horizontally aligned.
+        const marker = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+          .setLngLat(f.geometry.coordinates)
+          .addTo(map);
+        markersRef.current.push(marker);
+      });
+    }
+    ensure();
+  }, [showAllLocations, stateId]);
 
   return (
     <div className="absolute inset-0">

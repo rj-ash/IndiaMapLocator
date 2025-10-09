@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"wb_kolkata","name":"Kolkata","level":"district","hqCityId":"kolkata","centroid":[88.36,22.57],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[88.28,22.62],[88.28,22.48],[88.44,22.48],[88.46,22.6],[88.36,22.64],[88.28,22.62]]]}},
+    {"type":"Feature","properties":{"id":"wb_howrah","name":"Howrah","level":"district","hqCityId":"howrah","centroid":[88.33,22.60],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[88.22,22.66],[88.22,22.52],[88.38,22.52],[88.4,22.64],[88.3,22.68],[88.22,22.66]]]}},
+    {"type":"Feature","properties":{"id":"wb_darjeeling","name":"Darjeeling","level":"district","hqCityId":"siliguri","centroid":[88.43,26.72],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[88.3,26.8],[88.3,26.6],[88.5,26.5],[88.6,26.7],[88.5,26.85],[88.35,26.85],[88.3,26.8]]]}},
+    {"type":"Feature","properties":{"id":"wb_paschim_bardhaman","name":"Paschim Bardhaman","level":"district","hqCityId":"durgapur","centroid":[87.25,23.65],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[87.05,23.8],[87.05,23.6],[87.35,23.5],[87.5,23.6],[87.4,23.8],[87.2,23.85],[87.05,23.8]]]}},
+    {"type":"Feature","properties":{"id":"wb_north_24pgs","name":"North 24 Parganas","level":"district","hqCityId":"barasat","centroid":[88.49,22.88],"weight":0.6},"geometry":{"type":"Polygon","coordinates":[[[88.35,23.0],[88.35,22.8],[88.55,22.7],[88.7,22.8],[88.6,23.0],[88.4,23.05],[88.35,23.0]]]}},
+    {"type":"Feature","properties":{"id":"wb_south_24pgs","name":"South 24 Parganas","level":"district","hqCityId":"alipore","centroid":[88.42,22.31],"weight":0.6},"geometry":{"type":"Polygon","coordinates":[[[88.28,22.4],[88.28,22.2],[88.48,22.1],[88.6,22.2],[88.5,22.4],[88.35,22.45],[88.28,22.4]]]}},
+    {"type":"Feature","properties":{"id":"wb_medinipur","name":"Paschim Medinipur","level":"district","hqCityId":"medinipur","centroid":[87.32,22.43],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[87.15,22.55],[87.15,22.35],[87.35,22.25],[87.5,22.35],[87.4,22.55],[87.25,22.6],[87.15,22.55]]]}},
+    {"type":"Feature","properties":{"id":"wb_murshidabad","name":"Murshidabad","level":"district","hqCityId":"berhampore","centroid":[88.27,24.11],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[88.1,24.2],[88.1,24.0],[88.3,23.9],[88.45,24.0],[88.4,24.2],[88.2,24.25],[88.1,24.2]]]}},
+    {"type":"Feature","properties":{"id":"wb_birbhum","name":"Birbhum","level":"district","hqCityId":"suri","centroid":[87.68,23.84],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[87.5,23.95],[87.5,23.75],[87.7,23.65],[87.85,23.75],[87.8,23.95],[87.6,24.0],[87.5,23.95]]]}},
+    {"type":"Feature","properties":{"id":"wb_jalpaiguri","name":"Jalpaiguri","level":"district","hqCityId":"jalpaiguri","centroid":[88.72,26.54],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[88.55,26.65],[88.55,26.45],[88.75,26.35],[88.9,26.45],[88.8,26.65],[88.6,26.7],[88.55,26.65]]]}}
+  ]
+}

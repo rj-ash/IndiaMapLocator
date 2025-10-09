@@ -26,13 +26,14 @@ export default function App() {
   const onChangeState = e => setConfig(c => ({ ...c, stateId: e.target.value }));
   const onToggleRepeat = e => setConfig(c => ({ ...c, allowRepeatTargets: e.target.checked }));
   const onToggleOutlines = e => setConfig(c => ({ ...c, showDistrictOutlines: e.target.checked }));
+  const onToggleShowAll = e => setConfig(c => ({ ...c, showAllLocations: e.target.checked }));
 
   const lastGuess = state.guesses[state.guesses.length - 1];
 
   return (
   <div className="flex flex-col h-dvh max-h-dvh" data-mobile-panel={mobilePanelOpen ? 'open' : 'closed'}>
       <header className="flex items-center justify-between px-4 h-14 bg-slate-900 border-b border-slate-800 shrink-0">
-        <h1 className="text-sm sm:text-lg font-semibold tracking-wide line-clamp-1">MapLocator – {config.stateId.replace('_',' ')} Practice</h1>
+  <h1 className="text-sm sm:text-lg font-semibold tracking-wide line-clamp-1">MapLocator – {config.stateId ? config.stateId.replace('_',' ') + ' Practice' : 'Select a State'}</h1>
         <div className="flex items-center gap-2">
           <div className="hidden md:block text-sm opacity-80">Score: {state.score}</div>
           <button onClick={() => setMobilePanelOpen(o => !o)} className="px-2 py-1 text-xs sm:text-sm rounded bg-slate-800 border border-slate-700 hover:bg-slate-700">
@@ -48,6 +49,7 @@ export default function App() {
               showOutlines={config.showDistrictOutlines}
               onGuess={submitGuess}
               stateId={config.stateId}
+              showAllLocations={config.showAllLocations}
             />
             {/* Persistent session bar (now for all sizes) */}
             {state.state !== 'idle' && (
@@ -84,8 +86,8 @@ export default function App() {
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="pointer-events-auto bg-slate-900/80 p-4 sm:p-6 rounded-lg border border-slate-700 w-72 sm:w-80 text-center space-y-4">
                   <h2 className="font-medium text-base sm:text-lg">Start a Session</h2>
-                  <p className="text-xs sm:text-sm opacity-80">You will be shown a city name. Tap / click where you believe it is located.</p>
-                  <button onClick={start} className="px-4 py-2 bg-success/80 hover:bg-success rounded text-sm font-medium w-full">Start</button>
+                  <p className="text-xs sm:text-sm opacity-80">Select a state in Settings, then press Start to begin.</p>
+                  <button onClick={start} disabled={!config.stateId} className={`px-4 py-2 rounded text-sm font-medium w-full ${config.stateId ? 'bg-success/80 hover:bg-success' : 'bg-slate-700 cursor-not-allowed opacity-70'}`}>Start</button>
                 </div>
               </div>
             )}
@@ -99,7 +101,7 @@ export default function App() {
           </div>
           <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-6 pb-[env(safe-area-inset-bottom)]">
             <GamePanel state={state} config={config} lastGuess={lastGuess} start={start} next={next} reset={reset} skip={skip} />
-            <SettingsSection {...{ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat }} />
+            <SettingsSection {...{ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat, onToggleShowAll }} />
             <FooterSection />
           </div>
         </div>
@@ -109,7 +111,7 @@ export default function App() {
   );
 }
 
-function SettingsSection({ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat }) {
+function SettingsSection({ config, onChangeState, onChangeScope, onChangeRounds, onToggleOutlines, onToggleRepeat, onToggleShowAll }) {
   return (
     <section>
       <h2 className="font-medium mb-2">Settings</h2>
@@ -117,6 +119,7 @@ function SettingsSection({ config, onChangeState, onChangeScope, onChangeRounds,
         <div>
           <label className="block mb-1">State</label>
           <select value={config.stateId} onChange={onChangeState} className="w-full bg-slate-800 rounded px-2 py-1 mb-3 text-xs sm:text-sm">
+            <option value="">— Select a state —</option>
             {listStates().map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
           </select>
           <label className="block mb-1">Target Scope</label>
@@ -143,6 +146,10 @@ function SettingsSection({ config, onChangeState, onChangeScope, onChangeRounds,
         <div className="flex items-center gap-2">
           <input id="repeats" type="checkbox" checked={config.allowRepeatTargets} onChange={onToggleRepeat} className="accent-success" />
           <label htmlFor="repeats" className="cursor-pointer">Allow Repeats (if needed)</label>
+        </div>
+        <div className="flex items-center gap-2">
+          <input id="showAll" type="checkbox" checked={config.showAllLocations} onChange={onToggleShowAll} className="accent-success" />
+          <label htmlFor="showAll" className="cursor-pointer">Show All Locations</label>
         </div>
       </div>
     </section>

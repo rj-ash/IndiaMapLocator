@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature", "properties": { "id": "rj:hanumangarh", "name": "Hanumangarh", "districtId": "rj:hanumangarh", "type": "district_hq", "importance": 5 }, "geometry": { "type": "Point", "coordinates": [74.329, 29.581] } },
+    { "type": "Feature", "properties": { "id": "rj:ganganagar", "name": "Ganganagar", "districtId": "rj:ganganagar", "type": "district_hq", "importance": 5 }, "geometry": { "type": "Point", "coordinates": [73.883, 29.903] } },
+    { "type": "Feature", "properties": { "id": "rj:bikaner", "name": "Bikaner", "districtId": "rj:bikaner", "type": "district_hq", "importance": 6 }, "geometry": { "type": "Point", "coordinates": [73.311, 28.022] } },
+    { "type": "Feature", "properties": { "id": "rj:barmer", "name": "Barmer", "districtId": "rj:barmer", "type": "district_hq", "importance": 5 }, "geometry": { "type": "Point", "coordinates": [71.388, 25.751] } },
+    { "type": "Feature", "properties": { "id": "rj:jaisalmer", "name": "Jaisalmer", "districtId": "rj:jaisalmer", "type": "district_hq", "importance": 5 }, "geometry": { "type": "Point", "coordinates": [70.916, 26.915] } },
+    { "type": "Feature", "properties": { "id": "rj:pokaran", "name": "Pokaran", "districtId": "rj:jaisalmer", "type": "town", "importance": 3 }, "geometry": { "type": "Point", "coordinates": [71.915, 26.920] } },
+    { "type": "Feature", "properties": { "id": "rj:jodhpur", "name": "Jodhpur", "districtId": "rj:jodhpur", "type": "district_hq", "importance": 6 }, "geometry": { "type": "Point", "coordinates": [73.024, 26.238] } },
+    { "type": "Feature", "properties": { "id": "rj:amer", "name": "Amer", "districtId": "rj:jaipur", "type": "town", "importance": 3 }, "geometry": { "type": "Point", "coordinates": [75.851, 26.989] } },
+    { "type": "Feature", "properties": { "id": "rj:jaipur", "name": "Jaipur", "districtId": "rj:jaipur", "type": "district_hq", "importance": 7 }, "geometry": { "type": "Point", "coordinates": [75.787, 26.912] } },
+    { "type": "Feature", "properties": { "id": "rj:ajmer", "name": "Ajmer", "districtId": "rj:ajmer", "type": "district_hq", "importance": 6 }, "geometry": { "type": "Point", "coordinates": [74.640, 26.449] } },
+    { "type": "Feature", "properties": { "id": "rj:pushkar", "name": "Pushkar", "districtId": "rj:ajmer", "type": "town", "importance": 4 }, "geometry": { "type": "Point", "coordinates": [74.553, 26.490] } },
+    { "type": "Feature", "properties": { "id": "rj:kota", "name": "Kota", "districtId": "rj:kota", "type": "district_hq", "importance": 6 }, "geometry": { "type": "Point", "coordinates": [75.864, 25.180] } },
+    { "type": "Feature", "properties": { "id": "rj:chittaurgarh", "name": "Chittaurgarh", "districtId": "rj:chittaurgarh", "type": "district_hq", "importance": 5 }, "geometry": { "type": "Point", "coordinates": [74.638, 24.888] } },
+    { "type": "Feature", "properties": { "id": "rj:udaipur", "name": "Udaipur", "districtId": "rj:udaipur", "type": "district_hq", "importance": 6 }, "geometry": { "type": "Point", "coordinates": [73.714, 24.585] } },
+    { "type": "Feature", "properties": { "id": "rj:makrana", "name": "Makrana", "districtId": "rj:nagaur", "type": "town", "importance": 3 }, "geometry": { "type": "Point", "coordinates": [74.724, 27.027] } }
+  ]
+}

@@ -5,10 +5,10 @@ const cityById = new Map(cities.features.map(f => [f.properties.id, f]));
 
 export function getStateMetadata() {
   return {
-    id: 'india:uttar_pradesh',
-    name: 'Uttar Pradesh',
-    bounds: [77.0, 24.5, 84.5, 30.25],
-    center: [80.5, 27.0],
+    id: 'india:haryana',
+    name: 'Haryana',
+    bounds: [74.6, 27.8, 77.7, 30.95],
+    center: [76.2, 29.2],
     citiesCount: cities.features.length,
     districtsCount: districts.features.length
   };
@@ -20,10 +20,7 @@ export function weightedCityPool(scope='mixed') {
   return feats.map(f => ({ id: f.properties.id, importance: f.properties.importance, districtId: f.properties.districtId, type: f.properties.type }));
 }
 
-export function getCityCoordinates(id) {
-  const f = cityById.get(id); return f ? f.geometry.coordinates.slice() : null;
-}
-
+export function getCityCoordinates(id) { const f = cityById.get(id); return f ? f.geometry.coordinates.slice() : null; }
 export function findCity(id) { return cityById.get(id); }
 export function getDistricts() { return districts; }
 export function getCities() { return cities; }

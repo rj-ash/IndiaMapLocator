@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"chandigarh","name":"Chandigarh","districtId":"punjab_chandigarh","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[76.7794,30.7333]}},
+    {"type":"Feature","properties":{"id":"amritsar","name":"Amritsar","districtId":"punjab_amritsar","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[74.8723,31.6340]}},
+    {"type":"Feature","properties":{"id":"ludhiana","name":"Ludhiana","districtId":"punjab_ludhiana","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[75.8573,30.9000]}},
+    {"type":"Feature","properties":{"id":"jalandhar","name":"Jalandhar","districtId":"punjab_jalandhar","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[75.5792,31.3260]}},
+    {"type":"Feature","properties":{"id":"patiala","name":"Patiala","districtId":"punjab_patiala","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[76.3997,30.3398]}},
+    {"type":"Feature","properties":{"id":"bathinda","name":"Bathinda","districtId":"punjab_bathinda","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[74.9496,30.2100]}},
+    {"type":"Feature","properties":{"id":"hoshiarpur","name":"Hoshiarpur","districtId":"punjab_hoshiarpur","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[75.9149,31.5300]}},
+    {"type":"Feature","properties":{"id":"firozpur","name":"Firozpur","districtId":"punjab_firozpur","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[74.6136,30.9257]}},
+    {"type":"Feature","properties":{"id":"moga","name":"Moga","districtId":"punjab_moga","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[75.1742,30.8165]}},
+    {"type":"Feature","properties":{"id":"kapurthala","name":"Kapurthala","districtId":"punjab_kapurthala","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[75.3844,31.3801]}}
+  ]
+}

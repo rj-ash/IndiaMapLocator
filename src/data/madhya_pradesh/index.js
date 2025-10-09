@@ -26,3 +26,4 @@ export function getCityCoordinates(id) {
 
 export function findCity(id) { return cityById.get(id); }
 export function getDistricts() { return districts; }
+export function getCities() { return cities; }

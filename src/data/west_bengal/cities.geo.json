@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"kolkata","name":"Kolkata","districtId":"wb_kolkata","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[88.3639,22.5726]}},
+    {"type":"Feature","properties":{"id":"howrah","name":"Howrah","districtId":"wb_howrah","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[88.3293,22.5958]}},
+    {"type":"Feature","properties":{"id":"siliguri","name":"Siliguri","districtId":"wb_darjeeling","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[88.4285,26.7271]}},
+    {"type":"Feature","properties":{"id":"durgapur","name":"Durgapur","districtId":"wb_paschim_bardhaman","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[87.3119,23.5204]}},
+    {"type":"Feature","properties":{"id":"asansol","name":"Asansol","districtId":"wb_paschim_bardhaman","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[86.9833,23.6833]}}
+  ]
+}

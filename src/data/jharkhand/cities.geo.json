@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"ranchi","name":"Ranchi","districtId":"jharkhand_ranchi","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[85.3096,23.3441]}},
+    {"type":"Feature","properties":{"id":"jamshedpur","name":"Jamshedpur","districtId":"jharkhand_e_singhbhum","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[86.2029,22.8046]}},
+    {"type":"Feature","properties":{"id":"dhanbad","name":"Dhanbad","districtId":"jharkhand_dhanbad","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[86.4194,23.7957]}},
+    {"type":"Feature","properties":{"id":"bokaro","name":"Bokaro Steel City","districtId":"jharkhand_bokaro","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[86.1511,23.6693]}},
+    {"type":"Feature","properties":{"id":"hazaribagh","name":"Hazaribagh","districtId":"jharkhand_hazaribagh","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[85.3720,23.9966]}}
+  ]
+}

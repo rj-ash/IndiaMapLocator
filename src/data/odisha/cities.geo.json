@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"bhubaneswar","name":"Bhubaneswar","districtId":"odisha_khordha","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[85.8245,20.2961]}},
+    {"type":"Feature","properties":{"id":"cuttack","name":"Cuttack","districtId":"odisha_cuttack","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[85.8312,20.4625]}},
+    {"type":"Feature","properties":{"id":"puri","name":"Puri","districtId":"odisha_puri","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[85.8310,19.8134]}},
+    {"type":"Feature","properties":{"id":"rourkela","name":"Rourkela","districtId":"odisha_sundargarh","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[84.8536,22.2604]}},
+    {"type":"Feature","properties":{"id":"sambalpur","name":"Sambalpur","districtId":"odisha_sambalpur","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[83.9722,21.4669]}}
+  ]
+}

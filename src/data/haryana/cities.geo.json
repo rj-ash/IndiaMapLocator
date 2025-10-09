@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"chandigarh_haryana","name":"Chandigarh (Hry Capital)","districtId":"haryana_chandigarh","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[76.7794,30.7333]}},
+    {"type":"Feature","properties":{"id":"gurugram","name":"Gurugram","districtId":"haryana_gurugram","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[77.0266,28.4595]}},
+    {"type":"Feature","properties":{"id":"faridabad","name":"Faridabad","districtId":"haryana_faridabad","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[77.3064,28.4089]}},
+    {"type":"Feature","properties":{"id":"hisar","name":"Hisar","districtId":"haryana_hisar","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[75.7289,29.1492]}},
+    {"type":"Feature","properties":{"id":"karnal","name":"Karnal","districtId":"haryana_karnal","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[76.9896,29.6857]}},
+    {"type":"Feature","properties":{"id":"panipat","name":"Panipat","districtId":"haryana_panipat","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[76.9695,29.3919]}},
+    {"type":"Feature","properties":{"id":"sonipat","name":"Sonipat","districtId":"haryana_sonipat","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[77.0220,28.9288]}},
+    {"type":"Feature","properties":{"id":"ambala","name":"Ambala","districtId":"haryana_ambala","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[76.7767,30.3782]}},
+    {"type":"Feature","properties":{"id":"rohtak","name":"Rohtak","districtId":"haryana_rohtak","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[76.6311,28.8955]}},
+    {"type":"Feature","properties":{"id":"sirsa","name":"Sirsa","districtId":"haryana_sirsa","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[75.0233,29.5349]}}
+  ]
+}

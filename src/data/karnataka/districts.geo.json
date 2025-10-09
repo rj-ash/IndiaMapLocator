@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"karnataka_bengaluru_urban","name":"Bengaluru Urban","level":"district","hqCityId":"bengaluru","centroid":[77.6,12.97],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[77.45,13.1],[77.4,12.9],[77.55,12.8],[77.75,12.85],[77.8,13.05],[77.6,13.1],[77.45,13.1]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_mysuru","name":"Mysuru","level":"district","hqCityId":"mysuru","centroid":[76.65,12.30],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[76.5,12.45],[76.45,12.25],[76.6,12.15],[76.8,12.2],[76.85,12.4],[76.65,12.45],[76.5,12.45]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_dakshina_kannada","name":"Dakshina Kannada","level":"district","hqCityId":"mangaluru","centroid":[74.86,12.91],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[74.7,13.05],[74.65,12.85],[74.8,12.75],[75.0,12.8],[75.05,13.0],[74.85,13.05],[74.7,13.05]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_dharwad","name":"Dharwad","level":"district","hqCityId":"hubballi","centroid":[75.12,15.35],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[74.95,15.5],[74.9,15.3],[75.05,15.2],[75.25,15.25],[75.3,15.45],[75.1,15.5],[74.95,15.5]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_belagavi","name":"Belagavi","level":"district","hqCityId":"belagavi","centroid":[74.50,15.85],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[74.3,16.0],[74.25,15.8],[74.4,15.7],[74.6,15.75],[74.65,15.95],[74.45,16.0],[74.3,16.0]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_shivamogga","name":"Shivamogga","level":"district","hqCityId":"shivamogga","centroid":[75.57,13.93],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[75.4,14.1],[75.35,13.9],[75.5,13.8],[75.7,13.85],[75.75,14.05],[75.55,14.1],[75.4,14.1]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_uttara_kannada","name":"Uttara Kannada","level":"district","hqCityId":"karwar","centroid":[74.12,14.82],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[73.95,14.95],[73.9,14.75],[74.05,14.65],[74.25,14.7],[74.3,14.9],[74.1,14.95],[73.95,14.95]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_hassan","name":"Hassan","level":"district","hqCityId":"hassan","centroid":[76.10,13.01],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[75.95,13.15],[75.9,12.95],[76.05,12.85],[76.25,12.9],[76.3,13.1],[76.1,13.15],[75.95,13.15]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_kodagu","name":"Kodagu","level":"district","hqCityId":"madikeri","centroid":[75.74,12.42],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[75.55,12.55],[75.5,12.35],[75.65,12.25],[75.85,12.3],[75.9,12.5],[75.7,12.55],[75.55,12.55]]]}},
+    {"type":"Feature","properties":{"id":"karnataka_raichur","name":"Raichur","level":"district","hqCityId":"raichur","centroid":[77.36,16.2],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[77.2,16.35],[77.15,16.15],[77.3,16.05],[77.5,16.1],[77.55,16.3],[77.35,16.35],[77.2,16.35]]]}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"raipur","name":"Raipur","districtId":"cg_raipur","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[81.6296,21.2514]}},
+    {"type":"Feature","properties":{"id":"bilaspur","name":"Bilaspur","districtId":"cg_bilaspur","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[82.1409,22.0797]}},
+    {"type":"Feature","properties":{"id":"durg","name":"Durg","districtId":"cg_durg","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[81.2850,21.1914]}},
+    {"type":"Feature","properties":{"id":"korba","name":"Korba","districtId":"cg_korba","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[82.6824,22.3590]}},
+    {"type":"Feature","properties":{"id":"jagdalpur","name":"Jagdalpur","districtId":"cg_bastar","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[82.0032,19.0740]}}
+  ]
+}

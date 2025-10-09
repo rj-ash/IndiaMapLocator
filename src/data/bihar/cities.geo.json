@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"patna","name":"Patna","districtId":"bihar_patna","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[85.1376,25.5941]}},
+    {"type":"Feature","properties":{"id":"gaya","name":"Gaya","districtId":"bihar_gaya","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[84.9994,24.7955]}},
+    {"type":"Feature","properties":{"id":"bhagalpur","name":"Bhagalpur","districtId":"bihar_bhagalpur","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[86.9824,25.2417]}},
+    {"type":"Feature","properties":{"id":"muzaffarpur","name":"Muzaffarpur","districtId":"bihar_muzaffarpur","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[85.3910,26.1226]}},
+    {"type":"Feature","properties":{"id":"darbhanga","name":"Darbhanga","districtId":"bihar_darbhanga","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[85.8960,26.1542]}},
+    {"type":"Feature","properties":{"id":"purnia","name":"Purnia","districtId":"bihar_purnia","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[87.4766,25.7771]}},
+    {"type":"Feature","properties":{"id":"ara","name":"Ara","districtId":"bihar_bhojpur","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[84.6667,25.5667]}},
+    {"type":"Feature","properties":{"id":"siwan","name":"Siwan","districtId":"bihar_siwan","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[84.3542,26.2215]}},
+    {"type":"Feature","properties":{"id":"chhapra","name":"Chhapra","districtId":"bihar_saran","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[84.7373,25.7803]}},
+    {"type":"Feature","properties":{"id":"munger","name":"Munger","districtId":"bihar_munger","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[86.4722,25.3810]}}
+  ]
+}

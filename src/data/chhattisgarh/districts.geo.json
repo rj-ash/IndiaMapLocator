@@ -1,0 +1,15 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"cg_raipur","name":"Raipur","level":"district","hqCityId":"raipur","centroid":[81.63,21.25],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[81.45,21.4],[81.4,21.15],[81.55,21.05],[81.75,21.1],[81.8,21.3],[81.6,21.35],[81.45,21.4]]]}},
+    {"type":"Feature","properties":{"id":"cg_bilaspur","name":"Bilaspur","level":"district","hqCityId":"bilaspur","centroid":[82.14,22.08],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[81.95,22.2],[81.9,21.95],[82.05,21.85],[82.25,21.9],[82.3,22.1],[82.1,22.15],[81.95,22.2]]]}},
+    {"type":"Feature","properties":{"id":"cg_durg","name":"Durg","level":"district","hqCityId":"durg","centroid":[81.29,21.19],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[81.1,21.3],[81.05,21.05],[81.2,20.95],[81.4,21.0],[81.45,21.2],[81.25,21.25],[81.1,21.3]]]}},
+    {"type":"Feature","properties":{"id":"cg_korba","name":"Korba","level":"district","hqCityId":"korba","centroid":[82.68,22.36],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[82.5,22.5],[82.45,22.25],[82.6,22.15],[82.8,22.2],[82.85,22.4],[82.65,22.45],[82.5,22.5]]]}},
+    {"type":"Feature","properties":{"id":"cg_bastar","name":"Bastar","level":"district","hqCityId":"jagdalpur","centroid":[82.00,19.07],"weight":1},"geometry":{"type":"Polygon","coordinates":[[[81.8,19.2],[81.75,18.95],[81.9,18.85],[82.15,18.9],[82.2,19.1],[82.0,19.15],[81.8,19.2]]]}},
+    {"type":"Feature","properties":{"id":"cg_rajnandgaon","name":"Rajnandgaon","level":"district","hqCityId":"rajnandgaon","centroid":[80.98,21.10],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[80.8,21.25],[80.75,21.0],[80.9,20.9],[81.1,20.95],[81.15,21.15],[80.95,21.2],[80.8,21.25]]]}},
+    {"type":"Feature","properties":{"id":"cg_kanker","name":"Kanker","level":"district","hqCityId":"kanker","centroid":[81.49,20.27],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[81.3,20.4],[81.25,20.15],[81.4,20.05],[81.6,20.1],[81.65,20.3],[81.45,20.35],[81.3,20.4]]]}},
+    {"type":"Feature","properties":{"id":"cg_bemetara","name":"Bemetara","level":"district","hqCityId":"bemetara","centroid":[81.53,21.70],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[81.35,21.85],[81.3,21.6],[81.45,21.5],[81.65,21.55],[81.7,21.75],[81.5,21.8],[81.35,21.85]]]}},
+    {"type":"Feature","properties":{"id":"cg_mahasamund","name":"Mahasamund","level":"district","hqCityId":"mahasamund","centroid":[82.10,21.10],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[81.9,21.25],[81.85,21.0],[82.0,20.9],[82.2,20.95],[82.25,21.15],[82.05,21.2],[81.9,21.25]]]}},
+    {"type":"Feature","properties":{"id":"cg_sukma","name":"Sukma","level":"district","hqCityId":"sukma","centroid":[81.66,18.40],"weight":0.5},"geometry":{"type":"Polygon","coordinates":[[[81.5,18.55],[81.45,18.3],[81.6,18.2],[81.8,18.25],[81.85,18.45],[81.65,18.5],[81.5,18.55]]]}}
+  ]
+}

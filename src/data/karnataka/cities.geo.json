@@ -1,0 +1,10 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {"type":"Feature","properties":{"id":"bengaluru","name":"Bengaluru","districtId":"karnataka_bengaluru_urban","type":"district_hq","importance":5},"geometry":{"type":"Point","coordinates":[77.5946,12.9716]}},
+    {"type":"Feature","properties":{"id":"mysuru","name":"Mysuru","districtId":"karnataka_mysuru","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[76.6394,12.2958]}},
+    {"type":"Feature","properties":{"id":"mangaluru","name":"Mangaluru","districtId":"karnataka_dakshina_kannada","type":"district_hq","importance":4},"geometry":{"type":"Point","coordinates":[74.8560,12.9141]}},
+    {"type":"Feature","properties":{"id":"hubballi","name":"Hubballi","districtId":"karnataka_dharwad","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[75.1239,15.3647]}},
+    {"type":"Feature","properties":{"id":"belagavi","name":"Belagavi","districtId":"karnataka_belagavi","type":"district_hq","importance":3},"geometry":{"type":"Point","coordinates":[74.4977,15.8497]}}
+  ]
+}

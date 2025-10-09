@@ -8,7 +8,8 @@ export const defaultConfig = {
   pointsPerCorrect: 10,              // points when within threshold
   allowRepeatTargets: false,
   showDistrictOutlines: true,
-  stateId: 'uttarakhand'             // selected state key
+  stateId: '',                       // selected state key (empty means none)
+  showAllLocations: false            // show all cities & districts overlay
 };
 
 const STORAGE_KEY = 'ml_config_v1';
